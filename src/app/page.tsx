@@ -1,3 +1,5 @@
+import Filtering from './components/filtering/filtering';
+
 export default function Home() {
   return (
 	<main>
@@ -8,7 +10,7 @@ export default function Home() {
 		</div>
 
 		<div className="filtering">
-			<h2>Filtering</h2>
+			<Filtering />
 		</div>
 
 		<div className="cards">
