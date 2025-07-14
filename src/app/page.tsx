@@ -9,9 +9,7 @@ export default function Home() {
 			<h2>Sorting</h2>
 		</div>
 
-		<div className="filtering">
-			<Filtering />
-		</div>
+		<Filtering className="filtering"/>
 
 		<div className="cards">
 			<h2>Product Cards</h2>

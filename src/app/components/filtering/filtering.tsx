@@ -1,9 +1,13 @@
 import { data } from '../../../data';
 
-export default function Filtering () {
+interface FilteringProps {
+  className?: string;
+}
+
+export default function Filtering ({ className }: FilteringProps) {
 
 	return (
-		<ul>
+		<ul className={className}>
 			{(data?.categories).map((item: string) => (
 				<li key={item}>{item}</li>
 			))}
