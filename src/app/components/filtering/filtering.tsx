@@ -5,8 +5,11 @@ export default function Filtering () {
 	return (
 		<ul>
 			{(data?.categories).map((item: string) => (
-				<li>{item}</li>
+				<li key={item}>{item}</li>
 			))}
+
+			<li>Cheap first</li>
+			<li>Expensive first</li>
 		</ul>
 	)	
 }

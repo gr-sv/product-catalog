@@ -34,6 +34,14 @@ main {
 	justify-self: center;
 }
 
+.sorting,
+.filtering,
+.cards {
+	padding: 1em;
+	border: .1em solid lightgray;
+	border-radius: .5em;
+}
+
 .sorting {
 	grid-column: 2 / -1;
 }
