@@ -16,7 +16,7 @@ export default function Filtering ({ className }: FilteringProps) {
 
 			<Price />
 
-			<button id="apply-filter">Применить</button>
+			<button>Применить</button>
 		</div>
 	)	
 }
