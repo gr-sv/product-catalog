@@ -1,20 +1,17 @@
 import Filtering from './components/filtering/filtering';
 import Sorting from './components/sorting/sorting';
+import Cards from './components/cards/cards';
 
 export default function Home() {
   return (
 	<main>
 		<h1 className="title">Product Catalog</h1>
 
-		<div className="sorting">
-			<Sorting />
-		</div>
+		<Sorting className="sorting"/>
 
 		<Filtering className="filtering"/>
 
-		<div className="cards">
-			<h2>Product Cards</h2>
-		</div>
+		<Cards className="cards"/>
 	</main>
   )
 }
