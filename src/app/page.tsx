@@ -1,4 +1,5 @@
 import Filtering from './components/filtering/filtering';
+import Sorting from './components/sorting/sorting';
 
 export default function Home() {
   return (
@@ -6,7 +7,7 @@ export default function Home() {
 		<h1 className="title">Product Catalog</h1>
 
 		<div className="sorting">
-			<h2>Sorting</h2>
+			<Sorting />
 		</div>
 
 		<Filtering className="filtering"/>
