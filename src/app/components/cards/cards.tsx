@@ -1,7 +1,7 @@
 import data from '../../../data.json'
 
 interface CardsProps {
-  className?: string;
+	className?: string;
 }
 
 export default function Cards ({ className }: CardsProps) {
@@ -14,13 +14,10 @@ export default function Cards ({ className }: CardsProps) {
 					<p>{product.description}</p>
 					<p>{product.price}</p>
 					<p>{product.rating}</p>
-					<div>Image</div>
+					<img src={product.image.desktop} style={{ width: '200px', height: '200px' }} />
 					<p>{product.category}</p>
 				</div>
 			))}
-
-
-
 		</div>
 	)
 }
