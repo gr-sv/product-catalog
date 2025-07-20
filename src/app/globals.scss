@@ -10,6 +10,7 @@
   margin: 0;
   text-decoration: none;
   list-style-type: none;
+  border: none;
 }
 
 html,
@@ -30,6 +31,7 @@ body {
 	justify-content: center;
 	padding: 20px;
 	font-family: var(--font-arimo), Arial, sans-serif;
+	font-weight: 400;
 	font-size: 16px;
 	line-height: 1.5;
 }
@@ -39,6 +41,10 @@ main {
 	grid-template-columns: auto 1fr;
 	grid-template-rows: repeat(2, auto);
 	gap: .5em;
+}
+
+img {
+	display: block;
 }
 
 .title {

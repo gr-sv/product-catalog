@@ -1,5 +1,6 @@
 import data  from '../../../data.json';
 import Price from '../price/price';
+import s from './filtering.module.scss';
 
 interface FilteringProps {
   className?: string;
@@ -7,7 +8,7 @@ interface FilteringProps {
 
 export default function Filtering ({ className }: FilteringProps) {
 	return (
-		<div className={className}>
+		<div className={`${className} ${s.filtering}`}>
 			<ul>
 				{(data?.categories).map((item: string) => (
 					<li key={item}>{item}</li>
@@ -16,7 +17,7 @@ export default function Filtering ({ className }: FilteringProps) {
 
 			<Price />
 
-			<button>Применить</button>
+			<button>Apply</button>
 		</div>
 	)	
 }
