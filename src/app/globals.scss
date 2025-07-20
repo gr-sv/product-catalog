@@ -56,7 +56,7 @@ img {
 .filtering,
 .cards {
 	padding: 1em;
-	border: .1em solid #2E2C35;
+	border: .1em solid var(--text-default);
 	border-radius: .5em;
 	background-color: var(--bacground-second);
 }
