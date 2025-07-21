@@ -1,10 +1,13 @@
+import s from './price.module.scss';
+
 export default function Price () {
 	return (
-		<div>
-			<span>Price:</span>
+		<div className={s.price}>
+			<span className={s.priceTitle}>Price:</span>
 			
 			<label>
 				<input
+					className={s.priceInput}
 					type='number'
 					name='min-price'
 					min='0'
@@ -15,6 +18,7 @@ export default function Price () {
 			
 			<label>
 				<input
+					className={s.priceInput}
 					type='number'
 					name='max-price'
 					min='0'

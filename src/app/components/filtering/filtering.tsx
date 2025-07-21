@@ -10,6 +10,7 @@ export default function Filtering ({ className }: FilteringProps) {
 	return (
 		<div className={`${className} ${s.filtering}`}>
 			<div className={s.categories}>
+				<span className={s.categoriesTitle}>Categories:</span>
 				{(data?.categories).map((item: string) => (
 					<label key={item} className={s.category}>
 						<input className={s.categoryInput} type='checkbox' name={item} />
