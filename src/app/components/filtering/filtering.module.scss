@@ -5,3 +5,35 @@
 	align-items: start;
 	gap: 1.5em;
 }
+
+//categories
+.categories {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+	gap: 1em;
+}
+
+.category {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+}
+
+.categoryInput {
+	appearance: none;
+	width: 1.2em;
+	height: 1.2em;
+	border: .1em solid var(--text-default);
+	border-radius: .4em;
+
+	&:checked {
+		background-color: var(--input-checked);
+	}
+}
+
+.categoryName {
+	margin-left: 1em;
+}

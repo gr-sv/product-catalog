@@ -9,11 +9,14 @@ interface FilteringProps {
 export default function Filtering ({ className }: FilteringProps) {
 	return (
 		<div className={`${className} ${s.filtering}`}>
-			<ul>
+			<div className={s.categories}>
 				{(data?.categories).map((item: string) => (
-					<li key={item}>{item}</li>
+					<label key={item} className={s.category}>
+						<input className={s.categoryInput} type='checkbox' name={item} />
+						<span className={s.categoryName}>{item}</span>
+					</label>
 				))}
-			</ul>
+			</div>
 
 			<Price />
 
