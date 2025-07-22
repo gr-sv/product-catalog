@@ -12,9 +12,25 @@
 }
 
 .priceInput {
+	appearance: none;
 	height: 3em;
     border: .1em solid var(--text-default);
     border-radius: .5em;
     padding: 0.5em;
 	background-color: var(--background-default);
+	/* Для Firefox */
+	-moz-appearance: textfield;
+
+	/* Для WebKit (Chrome, Safari) */
+	&::-webkit-inner-spin-button,
+	&::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	/* Для Internet Explorer/Edge */
+	&::-ms-clear,
+	&::-ms-expand {
+ 		display: none;
+	}
 }
