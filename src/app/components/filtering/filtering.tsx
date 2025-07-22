@@ -21,7 +21,7 @@ export default function Filtering ({ className }: FilteringProps) {
 
 			<Price />
 
-			<button>Apply</button>
+			<button className={s.categoryButton}>Apply</button>
 		</div>
 	)	
 }

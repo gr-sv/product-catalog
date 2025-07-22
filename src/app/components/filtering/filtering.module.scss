@@ -43,3 +43,23 @@
 .categoryName {
 	margin-left: 1em;
 }
+
+//button
+.categoryButton {
+	width: 100%;
+	padding: .8em;
+	font-size: 1em;
+	letter-spacing: .05em;
+	color: var(--background-second);
+	background-color: var(--button-default);
+	border-radius: .4em;
+	transition: .3s;
+
+	&:hover {
+		background-color: var(--button-hover);
+	}
+
+	&:active {
+		transform: scale(.99);
+	}
+}
