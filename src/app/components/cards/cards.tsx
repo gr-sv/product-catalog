@@ -1,4 +1,5 @@
-import data from '../../../data.json'
+import data from '../../../data.json';
+import s from './cards.module.scss';
 
 interface CardsProps {
 	className?: string;
@@ -9,13 +10,13 @@ export default function Cards ({ className }: CardsProps) {
 
 		<div className={className}>
 			{(data?.products).map(product => (
-				<div key={product.id}>
-					<h2>{product.name}</h2>
-					<p>{product.description}</p>
-					<p>{product.price}</p>
-					<p>{product.rating}</p>
-					<img src={product.image.desktop} style={{ width: '200px', height: '200px' }} />
-					<p>{product.category}</p>
+				<div key={product.id} className={s.card}>
+					<h2 className={s.cardTitle}>{product.name}</h2>
+					<p className={s.cardDescription}>{product.description}</p>
+					<p className={s.cardPrice}>{`${product.price} $`}</p>
+					<p className={s.cardRating}>{product.rating}</p>
+					<img className={s.cardImage} src={product.image.desktop} />
+					<p className={s.cardCategory}>{`# ${product.category}`}</p>
 				</div>
 			))}
 		</div>

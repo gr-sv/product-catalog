@@ -1,0 +1,56 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+	background-color: var(--background-default);
+	border-radius: .5em;
+	gap: .3em;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.cardTitle,
+.cardPrice,
+.cardDescription,
+.cardRating,
+.cardCategory {
+	width: 100%;
+	padding: 0 16px;
+}
+
+.cardTitle {
+	font-size: 1.2em;
+	font-weight: 500;
+	color: var(--text-second);
+	order: -2;
+}
+
+.cardPrice {
+	font-size: 1.5em;
+	font-weight: 700;
+	color: var(--price-default);
+	letter-spacing: .05em;
+	order: -1;
+}
+
+.cardImage {
+	width: 100%;
+	height: auto;
+	margin-bottom: .3em;
+	order: -3;
+	align-self: center;
+	border-radius: .5em .5em 0 0;
+}
+
+.cardRating {
+	font-size: 1.1em;
+	font-weight: 500;
+	color: var(--rating-default);
+}
+
+.cardCategory {
+	color: var(--text-second);
+}

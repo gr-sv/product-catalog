@@ -6,6 +6,8 @@
 	--input-checked: #F5B94C;
 	--button-default: #CCB179;
 	--button-hover: #948164;
+	--price-default: #F47B63;
+	--rating-default: #DA9100;
 }
 
 * {
@@ -61,7 +63,7 @@ img {
 .cards {
 	padding: 1em;
 	border: .1em solid var(--button-hover);
-	border-radius: .5em;
+	border-radius: 1em;
 	background-color: var(--background-second);
 }
 
@@ -77,6 +79,6 @@ img {
 .cards {
 	grid-column: 2 / -1;
 	display: grid;
-	grid-template-columns: repeat(4, auto);
-	gap: .3em;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1em;
 }
