@@ -14,7 +14,7 @@ export default function Cards ({ className }: CardsProps) {
 					<h2 className={s.cardTitle}>{product.name}</h2>
 					<p className={s.cardDescription}>{product.description}</p>
 					<p className={s.cardPrice}>{`${product.price} $`}</p>
-					<p className={s.cardRating}>{product.rating}</p>
+					<p className={s.cardRating}>&#9733; {product.rating}</p>
 					<img className={s.cardImage} src={product.image.desktop} />
 					<p className={s.cardCategory}>{`# ${product.category}`}</p>
 				</div>
