@@ -107,6 +107,7 @@ img {
 	gap: 1em;
 
 	@include bp.tablet {
+		grid-template-columns: repeat(2, 1fr);
 		gap: .5em;
 	}
 }
