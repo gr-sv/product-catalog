@@ -1,9 +1,15 @@
+@use '../../breakpoints' as bp;
+
 .price {
 	display: flex;
 	flex-direction: column;
 	justify-content: start;
 	align-items: start;
 	gap: 1em;
+
+	@include bp.tablet {
+		gap: .5em;
+	}
 }
 
 .priceTitle	{
@@ -36,5 +42,9 @@
 
 	&:hover {
 		border-color: var(--button-hover);
+	}
+
+	@include bp.tablet {
+		height: 2.5em;
 	}
 }
