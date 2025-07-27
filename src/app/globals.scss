@@ -26,27 +26,30 @@ body {
 }
 
 html {
-  height: 100%;
-  color: var(--text-default);
-  background-color: var(--background-default);
+	height: 100%;
+	color: var(--text-default);
+	background-color: var(--background-default);
 }
 
 body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding: 20px;
+	align-items: center;
+	padding: 2em;
 	font-family: var(--font-arimo), Arial, sans-serif;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 1.5;
 }
 
-main {
+.main {
+	max-width: 1416px;
 	display: grid;
 	grid-template-columns: auto 1fr;
 	grid-template-rows: repeat(2, auto);
-	gap: .5em;
+	column-gap: 2em;
+	row-gap: 1em;
 }
 
 img {
@@ -56,6 +59,7 @@ img {
 .title {
 	grid-column: 1 / -1;
 	justify-self: center;
+	color: var(--text-second);
 }
 
 .sorting,
