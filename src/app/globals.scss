@@ -1,3 +1,5 @@
+@use 'breakpoints' as bp;
+
 :root {
 	--text-default: #2E2C35;
 	--text-second: #4D5A61;
@@ -41,6 +43,16 @@ body {
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 1.5;
+
+	@include bp.mobile {
+		padding: 1em;
+		font-size: 14px;
+	}
+
+	@include bp.tablet {
+		padding: 1.5em;
+		font-size: 15px;
+	}
 }
 
 .main {
@@ -50,6 +62,10 @@ body {
 	grid-template-rows: repeat(2, auto);
 	column-gap: 2em;
 	row-gap: 1em;
+
+	@include bp.tablet {
+		column-gap: 1em;
+	}
 }
 
 img {
@@ -85,4 +101,8 @@ img {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 1em;
+
+	@include bp.tablet {
+		gap: .5em;
+	}
 }
