@@ -85,6 +85,10 @@ img {
 	border: .1em solid var(--button-hover);
 	border-radius: 1em;
 	background-color: var(--background-second);
+
+	@include bp.tablet {
+		padding: .5em;
+	}
 }
 
 .sorting {

@@ -1,9 +1,16 @@
+@use '../../breakpoints' as bp;
+
 .filtering {
+	max-height: fit-content;
 	display: flex;
 	flex-direction: column;
 	justify-content: start;
 	align-items: start;
 	gap: 2em;
+
+	@include bp.tablet {
+		gap: 1em;
+	}
 }
 
 //categories
@@ -30,8 +37,6 @@
 	justify-content: start;
 	align-items: center;
 	cursor: pointer;
-
-	
 }
 
 .categoryInput {
@@ -52,6 +57,10 @@
 
 .categoryName {
 	margin-left: 1em;
+
+	@include bp.tablet {
+		margin-left: .5em;
+	}
 }
 
 //button
