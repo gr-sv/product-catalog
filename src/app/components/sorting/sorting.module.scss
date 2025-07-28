@@ -16,5 +16,10 @@
 
 	@include bp.tablet {
 		padding: .6em 1.5em;
-	} 
+	}
+
+	@include bp.mobile {
+		width: 154px;
+		text-align: center;
+	}
 }

@@ -11,6 +11,12 @@
 	@include bp.tablet {
 		gap: 1em;
 	}
+
+	@include bp.mobile {
+		justify-content: center;
+		align-items: center;
+		gap: .5em;
+	}
 }
 
 //categories
@@ -26,6 +32,11 @@
 	justify-content: start;
 	align-items: start;
 	gap: .5em;
+
+	@include bp.mobile {
+		width: 154px;
+		gap: .25em;
+	}
 }
 
 .category {
@@ -37,6 +48,10 @@
 	justify-content: start;
 	align-items: center;
 	cursor: pointer;
+
+	@include bp.tablet {
+		width: max-content;
+	}
 }
 
 .categoryInput {
@@ -80,5 +95,9 @@
 
 	&:active {
 		transform: scale(.99);
+	}
+
+	@include bp.tablet {
+		max-width: 154px;
 	}
 }

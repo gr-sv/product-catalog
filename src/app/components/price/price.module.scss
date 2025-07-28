@@ -10,6 +10,10 @@
 	@include bp.tablet {
 		gap: .5em;
 	}
+
+	@include bp.mobile {
+		gap: .25em;
+	}
 }
 
 .priceTitle	{
