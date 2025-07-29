@@ -11,7 +11,13 @@ export default function Cards ({ className }: CardsProps) {
 		<div className={className}>
 			{(data?.products).map(product => (
 				<div key={product.id} className={s.card}>
-					<img className={s.cardImage} src={product.image.desktop} />
+
+					<picture>
+                        <source media="(max-width: 445px)" srcSet={product?.image?.mobile} />
+                        <source media="(max-width: 1024px)" srcSet={product?.image?.tablet} />
+                        <img className={s.cardImage} src={product?.image?.desktop} alt={product.name} />
+                    </picture>
+
 					<div className={s.cardAbout}>
 						<h2 className={s.cardTitle}>{product.name}</h2>
 						<p className={s.cardDescription}>{product.description}</p>
