@@ -8,10 +8,14 @@
 	gap: 1em;
 
 	@include bp.tablet {
+		flex-direction: row;
+		align-items: center;	
 		gap: .5em;
 	}
 
 	@include bp.mobile {
+		flex-direction: column;
+		align-items: start;
 		gap: .25em;
 	}
 }

@@ -36,12 +36,14 @@
 	@include bp.tablet {
 		flex-direction: row;
 		justify-content: start;
+		align-items: center;
 		flex-wrap: wrap;
 	}
 
 	@include bp.mobile {
 		width: 154px;
 		flex-direction: column;
+		align-items: start;
 		gap: .25em;
 	}
 }
