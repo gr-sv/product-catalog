@@ -33,8 +33,15 @@
 	align-items: start;
 	gap: .5em;
 
+	@include bp.tablet {
+		flex-direction: row;
+		justify-content: start;
+		flex-wrap: wrap;
+	}
+
 	@include bp.mobile {
 		width: 154px;
+		flex-direction: column;
 		gap: .25em;
 	}
 }
