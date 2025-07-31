@@ -31,6 +31,10 @@
 	height: auto;
 	align-self: center;
 	border-radius: .5em .5em 0 0;
+
+	@include bp.mobile {
+		border-radius: 0;
+	}
 }
 
 .cardTitle {
