@@ -11,10 +11,10 @@ interface FilteringProps {
 
 export default function Filtering ({ className }: FilteringProps) {
 
-	const [isChecked, setIsChecked] = useState(false);
+	const [selected, setSelected] = useState<string | null>(null);
 
-	function handleClickChecked() {
-        setIsChecked(!isChecked);
+	const handleClickSelected = (item: string) => {
+        setSelected(item);
     }
 
 	return (
@@ -27,8 +27,8 @@ export default function Filtering ({ className }: FilteringProps) {
 							className={s.categoryInput}
 							type='checkbox'
 							name={item}
-							checked={isChecked}
-          					onChange={handleClickChecked}
+							checked={selected === item}
+          					onChange={() => handleClickSelected(item)}
 						/>
 						<span className={s.categoryName}>{item}</span>
 					</label>
