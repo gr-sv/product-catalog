@@ -6,16 +6,18 @@ import Price from '../price/price';
 import s from './filtering.module.scss';
 
 interface FilteringProps {
-  className?: string;
+	className?: string;
+	selected: string[];
+	setSelected: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-export default function Filtering ({ className }: FilteringProps) {
-
-	const [selected, setSelected] = useState<string | null>(null);
+export default function Filtering ({ className, selected, setSelected }: FilteringProps) {
 
 	const handleClickSelected = (item: string) => {
-        setSelected(item);
-    }
+		setSelected(prev =>
+			prev.includes(item) ? prev.filter(i => i !== item) : [...prev, item]
+   		);
+	};
 
 	return (
 		<div className={`${className} ${s.filtering}`}>
@@ -27,7 +29,7 @@ export default function Filtering ({ className }: FilteringProps) {
 							className={s.categoryInput}
 							type='checkbox'
 							name={item}
-							checked={selected === item}
+							checked={selected.includes(item)}
           					onChange={() => handleClickSelected(item)}
 						/>
 						<span className={s.categoryName}>{item}</span>
