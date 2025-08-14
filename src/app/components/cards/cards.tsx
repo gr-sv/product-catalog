@@ -3,13 +3,20 @@ import s from './cards.module.scss';
 
 interface CardsProps {
 	className?: string;
+	selectedCategories: string[];
 }
 
-export default function Cards ({ className }: CardsProps) {
-	return (
+export default function Cards ({ className, selectedCategories }: CardsProps) {
 
+	const filteredProducts = selectedCategories.length === 0
+    ? data.products
+    : data.products.filter(product => selectedCategories.includes(product.category));
+
+	console.log('filteredProducts', filteredProducts);
+
+	return (
 		<div className={className}>
-			{(data?.products).map(product => (
+			{filteredProducts.map(product => (
 				<div key={product.id} className={s.card}>
 
 					<picture>
