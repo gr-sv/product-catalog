@@ -1,6 +1,20 @@
+'use client'
+
 import s from './price.module.scss';
 
-export default function Price () {
+interface FilteringProps {
+	fromPrice: number;
+	setFromPrice: React.Dispatch<React.SetStateAction<number>>;
+}
+
+export default function Price ({ fromPrice, setFromPrice }: FilteringProps) {
+
+	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const value = event.target.value;
+		const numericValue = parseInt(value, 10);
+		setFromPrice(numericValue);
+	};
+
 	return (
 		<div className={s.price}>
 			<span className={s.priceTitle}>Price:</span>
@@ -13,6 +27,8 @@ export default function Price () {
 					min='0'
 					step='1'
 					placeholder='From:'
+					value={fromPrice}
+					onChange={handleChange}
 				/>
 			</label>
 			
