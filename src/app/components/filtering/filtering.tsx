@@ -38,8 +38,6 @@ export default function Filtering ({ className, selected, setSelected }: Filteri
 			</div>
 
 			<Price />
-
-			<button className={s.categoryButton}>Apply</button>
 		</div>
 	)	
 }

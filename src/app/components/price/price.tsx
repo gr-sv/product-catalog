@@ -26,6 +26,8 @@ export default function Price () {
 					placeholder='To:'
 				/>
 			</label>
+
+			<button className={s.categoryButton}>Apply</button>
 		</div>
 	)	
 }
