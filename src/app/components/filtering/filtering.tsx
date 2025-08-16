@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react';
 import data  from '../../../data.json';
 import Price from '../price/price';
 import s from './filtering.module.scss';
@@ -9,9 +8,11 @@ interface FilteringProps {
 	className?: string;
 	selected: string[];
 	setSelected: React.Dispatch<React.SetStateAction<string[]>>;
+	fromPrice: number;
+	setFromPrice: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export default function Filtering ({ className, selected, setSelected }: FilteringProps) {
+export default function Filtering ({ className, selected, setSelected, fromPrice, setFromPrice }: FilteringProps) {
 
 	const handleClickSelected = (item: string) => {
 		setSelected(prev =>
@@ -37,7 +38,10 @@ export default function Filtering ({ className, selected, setSelected }: Filteri
 				))}
 			</div>
 
-			<Price />
+			<Price
+				fromPrice={fromPrice}
+				setFromPrice={setFromPrice}
+			/>
 		</div>
 	)	
 }

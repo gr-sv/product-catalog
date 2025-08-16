@@ -8,8 +8,10 @@ import Cards from './components/cards/cards';
 export default function Home() {
 
 	const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-
 	console.log('selectedCategories', selectedCategories)
+
+	const [fromPrice, setFromPrice] = useState(0);
+	console.log('fromPrice', fromPrice);
 
 	return (
 		<main className='main'>
@@ -21,11 +23,14 @@ export default function Home() {
 				className="filtering"
 				selected={selectedCategories}
             	setSelected={setSelectedCategories}
+				fromPrice={fromPrice}
+				setFromPrice = {setFromPrice}
 			/>
 
 			<Cards
 				className="cards"
-				selectedCategories={selectedCategories}/>
+				selectedCategories={selectedCategories}
+			/>
 		</main>
   )
 }
