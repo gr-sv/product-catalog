@@ -5,15 +5,27 @@ import s from './price.module.scss';
 interface FilteringProps {
 	fromPrice: number;
 	setFromPrice: React.Dispatch<React.SetStateAction<number>>;
+	toPrice: number;
+	setToPrice: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export default function Price ({ fromPrice, setFromPrice }: FilteringProps) {
+export default function Price ({ fromPrice, setFromPrice, toPrice, setToPrice }: FilteringProps) {
 
-	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const value = event.target.value;
-		const numericValue = parseInt(value, 10);
-		setFromPrice(numericValue);
+	const handleChangeFromPrice = (event: React.ChangeEvent<HTMLInputElement>) => {
+		event.preventDefault();
+		const valueFromPrice = event.target.value;
+		const numericValueFromPrice = parseInt(valueFromPrice, 10);
+		setFromPrice(numericValueFromPrice);
 	};
+
+	const handleChangeToPrice = (event: React.ChangeEvent<HTMLInputElement>) => {
+		event.preventDefault();
+		const valueToPrice = event.target.value;
+		const numericValueToPrice = parseInt(valueToPrice, 10);
+		setToPrice(numericValueToPrice);
+	};
+
+	
 
 	return (
 		<div className={s.price}>
@@ -23,12 +35,12 @@ export default function Price ({ fromPrice, setFromPrice }: FilteringProps) {
 				<input
 					className={s.priceInput}
 					type='number'
-					name='min-price'
+					name='from-price'
 					min='0'
 					step='1'
 					placeholder='From:'
 					value={fromPrice}
-					onChange={handleChange}
+					onChange={handleChangeFromPrice}
 				/>
 			</label>
 			
@@ -36,10 +48,12 @@ export default function Price ({ fromPrice, setFromPrice }: FilteringProps) {
 				<input
 					className={s.priceInput}
 					type='number'
-					name='max-price'
+					name='to-price'
 					min='0'
 					step='1'
 					placeholder='To:'
+					value={toPrice}
+					onChange={handleChangeToPrice}
 				/>
 			</label>
 

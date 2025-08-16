@@ -13,6 +13,9 @@ export default function Home() {
 	const [fromPrice, setFromPrice] = useState(0);
 	console.log('fromPrice', fromPrice);
 
+	const [toPrice, setToPrice] = useState(0);
+	console.log('toPrice', toPrice);
+
 	return (
 		<main className='main'>
 			<h1 className="title">Product Catalog</h1>
@@ -24,7 +27,9 @@ export default function Home() {
 				selected={selectedCategories}
             	setSelected={setSelectedCategories}
 				fromPrice={fromPrice}
-				setFromPrice = {setFromPrice}
+				setFromPrice={setFromPrice}
+				toPrice={toPrice}
+				setToPrice={setToPrice}
 			/>
 
 			<Cards
