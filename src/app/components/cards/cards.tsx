@@ -18,16 +18,15 @@ export default function Cards ({ className, selectedCategories, fromPrice, toPri
 	console.log('filteredProducts', filteredProducts);
 
 	//price
-	if (fromPrice === 0 && toPrice === 0) {
-		filteredProducts = data.products;
-	} else if (fromPrice > 0 && toPrice === 0) {
-		filteredProducts = data.products.filter(product => product.price >= fromPrice); 
-	} else if (fromPrice === 0 && toPrice > 0) {
-		filteredProducts = data.products.filter(product => product.price <= toPrice);
-	} else if (fromPrice > 0 && toPrice > 0) {
-		filteredProducts = data.products.filter(product => ( product.price >= fromPrice && product.price <= toPrice ));
+	
+	if (fromPrice > 0 && toPrice === 0) {
+		filteredProducts = filteredProducts.filter(product => product.price >= fromPrice); 
 	}
-
+	
+	if (fromPrice === 0 && toPrice > 0) {
+		filteredProducts = filteredProducts.filter(product => product.price <= toPrice);
+	}
+	
 	console.log('filteredProducts', filteredProducts);
  	
 
