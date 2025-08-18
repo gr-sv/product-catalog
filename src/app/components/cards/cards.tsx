@@ -4,9 +4,11 @@ import s from './cards.module.scss';
 interface CardsProps {
 	className?: string;
 	selectedCategories: string[];
+	fromPrice: number;
+	toPrice: number;
 }
 
-export default function Cards ({ className, selectedCategories }: CardsProps) {
+export default function Cards ({ className, selectedCategories, fromPrice, toPrice }: CardsProps) {
 
 	const filteredProducts = selectedCategories.length === 0
     ? data.products

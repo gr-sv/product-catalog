@@ -35,6 +35,8 @@ export default function Home() {
 			<Cards
 				className="cards"
 				selectedCategories={selectedCategories}
+				fromPrice={fromPrice}
+				toPrice={toPrice}
 			/>
 		</main>
   )

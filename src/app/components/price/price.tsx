@@ -25,8 +25,6 @@ export default function Price ({ fromPrice, setFromPrice, toPrice, setToPrice }:
 		setToPrice(numericValueToPrice);
 	};
 
-	
-
 	return (
 		<div className={s.price}>
 			<span className={s.priceTitle}>Price:</span>
