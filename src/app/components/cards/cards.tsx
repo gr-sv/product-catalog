@@ -10,11 +10,26 @@ interface CardsProps {
 
 export default function Cards ({ className, selectedCategories, fromPrice, toPrice }: CardsProps) {
 
-	const filteredProducts = selectedCategories.length === 0
+	//categories
+	let filteredProducts = selectedCategories.length === 0
     ? data.products
     : data.products.filter(product => selectedCategories.includes(product.category));
 
 	console.log('filteredProducts', filteredProducts);
+
+	//price
+	if (fromPrice === 0 && toPrice === 0) {
+		filteredProducts = data.products;
+	} else if (fromPrice > 0 && toPrice === 0) {
+		filteredProducts = data.products.filter(product => product.price >= fromPrice); 
+	} else if (fromPrice === 0 && toPrice > 0) {
+		filteredProducts = data.products.filter(product => product.price <= toPrice);
+	} else if (fromPrice > 0 && toPrice > 0) {
+		filteredProducts = data.products.filter(product => ( product.price >= fromPrice && product.price <= toPrice ));
+	}
+
+	console.log('filteredProducts', filteredProducts);
+ 	
 
 	return (
 		<div className={className}>
