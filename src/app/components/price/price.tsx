@@ -3,10 +3,10 @@
 import s from './price.module.scss';
 
 interface FilteringProps {
-	fromPrice: number;
-	setFromPrice: React.Dispatch<React.SetStateAction<number>>;
-	toPrice: number;
-	setToPrice: React.Dispatch<React.SetStateAction<number>>;
+	fromPrice: number | null;
+	setFromPrice: React.Dispatch<React.SetStateAction<number | null>>;
+	toPrice: number | null;
+	setToPrice: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
 export default function Price ({ fromPrice, setFromPrice, toPrice, setToPrice }: FilteringProps) {
@@ -15,15 +15,20 @@ export default function Price ({ fromPrice, setFromPrice, toPrice, setToPrice }:
 		event.preventDefault();
 		const valueFromPrice = event.target.value;
 		const numericValueFromPrice = parseInt(valueFromPrice, 10);
-		setFromPrice(numericValueFromPrice);
+		setFromPrice(isNaN(numericValueFromPrice) ? null : numericValueFromPrice);
 	};
 
 	const handleChangeToPrice = (event: React.ChangeEvent<HTMLInputElement>) => {
 		event.preventDefault();
 		const valueToPrice = event.target.value;
 		const numericValueToPrice = parseInt(valueToPrice, 10);
-		setToPrice(numericValueToPrice);
+		setToPrice(isNaN(numericValueToPrice) ? null : numericValueToPrice);
 	};
+
+	// const handleClickButton = () => {
+	// 	handleChangeFromPrice();
+	// 	handleChangeToPrice();
+	// }
 
 	return (
 		<div className={s.price}>
@@ -37,7 +42,7 @@ export default function Price ({ fromPrice, setFromPrice, toPrice, setToPrice }:
 					min='0'
 					step='1'
 					placeholder='From:'
-					value={fromPrice}
+					value={fromPrice ?? ''}
 					onChange={handleChangeFromPrice}
 				/>
 			</label>
@@ -50,12 +55,17 @@ export default function Price ({ fromPrice, setFromPrice, toPrice, setToPrice }:
 					min='0'
 					step='1'
 					placeholder='To:'
-					value={toPrice}
+					value={toPrice ?? ''}
 					onChange={handleChangeToPrice}
 				/>
 			</label>
 
-			<button className={s.categoryButton}>Apply</button>
+			<button
+				className={s.categoryButton}
+				// onClick={handleClickButton}
+			>
+				Apply
+			</button>
 		</div>
 	)	
 }
