@@ -10,10 +10,10 @@ export default function Home() {
 	const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 	console.log('selectedCategories', selectedCategories)
 
-	const [fromPrice, setFromPrice] = useState(0);
+	const [fromPrice, setFromPrice] = useState<number | null>(null);
 	console.log('fromPrice', fromPrice);
 
-	const [toPrice, setToPrice] = useState(0);
+	const [toPrice, setToPrice] = useState<number | null>(null);
 	console.log('toPrice', toPrice);
 
 	return (
