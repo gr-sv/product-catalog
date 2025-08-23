@@ -2,14 +2,14 @@
 
 import s from './price.module.scss';
 
-interface FilteringProps {
+interface PriceProps {
 	fromPrice: number | null;
 	setFromPrice: React.Dispatch<React.SetStateAction<number | null>>;
 	toPrice: number | null;
 	setToPrice: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
-export default function Price ({ fromPrice, setFromPrice, toPrice, setToPrice }: FilteringProps) {
+export default function Price ({ fromPrice, setFromPrice, toPrice, setToPrice }: PriceProps) {
 
 	const handleChangeFromPrice = (event: React.ChangeEvent<HTMLInputElement>) => {
 		event.preventDefault();
@@ -24,11 +24,6 @@ export default function Price ({ fromPrice, setFromPrice, toPrice, setToPrice }:
 		const numericValueToPrice = parseInt(valueToPrice, 10);
 		setToPrice(isNaN(numericValueToPrice) ? null : numericValueToPrice);
 	};
-
-	// const handleClickButton = () => {
-	// 	handleChangeFromPrice();
-	// 	handleChangeToPrice();
-	// }
 
 	return (
 		<div className={s.price}>
