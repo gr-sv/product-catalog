@@ -4,8 +4,8 @@ import s from './cards.module.scss';
 interface CardsProps {
 	className?: string;
 	selectedCategories: string[];
-	fromPrice: number;
-	toPrice: number;
+	fromPrice: number | null;
+	toPrice: number | null;
 }
 
 export default function Cards ({ className, selectedCategories, fromPrice, toPrice }: CardsProps) {
@@ -18,18 +18,20 @@ export default function Cards ({ className, selectedCategories, fromPrice, toPri
 	console.log('filteredProducts', filteredProducts);
 
 	//price
-	
-	if (fromPrice > 0 && toPrice === 0) {
+	if (fromPrice !== null && fromPrice > 0 && (toPrice === null || toPrice === 0)) {
 		filteredProducts = filteredProducts.filter(product => product.price >= fromPrice); 
 	}
 	
-	if (fromPrice === 0 && toPrice > 0) {
+	if (toPrice !== null && toPrice > 0 && (fromPrice === null || fromPrice === 0)) {
 		filteredProducts = filteredProducts.filter(product => product.price <= toPrice);
 	}
+
+	if (fromPrice !== null && fromPrice > 0 && toPrice !== null && toPrice > 0) {
+        filteredProducts = filteredProducts.filter(product => product.price >= fromPrice && product.price <= toPrice);
+    }
 	
 	console.log('filteredProducts', filteredProducts);
  	
-
 	return (
 		<div className={className}>
 			{filteredProducts.map(product => (
