@@ -8,10 +8,10 @@ interface FilteringProps {
 	className?: string;
 	selected: string[];
 	setSelected: React.Dispatch<React.SetStateAction<string[]>>;
-	fromPrice: number;
-	setFromPrice: React.Dispatch<React.SetStateAction<number>>;
-	toPrice: number;
-	setToPrice: React.Dispatch<React.SetStateAction<number>>;
+	fromPrice: number | null;
+	setFromPrice: React.Dispatch<React.SetStateAction<number | null>>;
+	toPrice: number | null;
+	setToPrice: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
 export default function Filtering ({ className, selected, setSelected, fromPrice, setFromPrice, toPrice, setToPrice }: FilteringProps) {
