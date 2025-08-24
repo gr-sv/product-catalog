@@ -38,17 +38,15 @@ export default function Home() {
 				setFromPrice={setFromPrice}
 				toPrice={toPrice}
 				setToPrice={setToPrice}
-				filteredFromPrice={filteredFromPrice}
 				setFilteredFromPrice={setFilteredFromPrice}
-				filteredToPrice={filteredToPrice}
 				setFilteredToPrice={setFilteredToPrice}
 			/>
 
 			<Cards
 				className="cards"
 				selectedCategories={selectedCategories}
-				fromPrice={fromPrice}
-				toPrice={toPrice}
+				fromPrice={filteredFromPrice}
+                toPrice={filteredToPrice}
 			/>
 		</main>
   )
