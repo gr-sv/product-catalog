@@ -12,9 +12,11 @@ interface FilteringProps {
 	setFromPrice: React.Dispatch<React.SetStateAction<number | null>>;
 	toPrice: number | null;
 	setToPrice: React.Dispatch<React.SetStateAction<number | null>>;
+	setFilteredFromPrice: React.Dispatch<React.SetStateAction<number | null>>;
+	setFilteredToPrice: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
-export default function Filtering ({ className, selected, setSelected, fromPrice, setFromPrice, toPrice, setToPrice }: FilteringProps) {
+export default function Filtering ({ className, selected, setSelected, fromPrice, setFromPrice, toPrice, setToPrice, setFilteredFromPrice, setFilteredToPrice }: FilteringProps) {
 
 	const handleClickSelected = (item: string) => {
 		setSelected(prev =>
@@ -45,6 +47,8 @@ export default function Filtering ({ className, selected, setSelected, fromPrice
 				setFromPrice={setFromPrice}
 				toPrice={toPrice}
 				setToPrice={setToPrice}
+				setFilteredFromPrice={setFilteredFromPrice}
+				setFilteredToPrice={setFilteredToPrice}
 			/>
 		</div>
 	)	
