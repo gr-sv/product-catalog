@@ -7,14 +7,22 @@ import Cards from './components/cards/cards';
 
 export default function Home() {
 
+	//categories
 	const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 	console.log('selectedCategories', selectedCategories)
 
+	//price
 	const [fromPrice, setFromPrice] = useState<number | null>(null);
 	console.log('fromPrice', fromPrice);
 
 	const [toPrice, setToPrice] = useState<number | null>(null);
 	console.log('toPrice', toPrice);
+
+	const [filteredFromPrice, setFilteredFromPrice] = useState<number | null>(null);
+	console.log('filteredFromPrice', filteredFromPrice);
+
+	const [filteredToPrice, setFilteredToPrice] = useState<number | null>(null);
+	console.log('filteredToPrice', filteredToPrice);
 
 	return (
 		<main className='main'>
@@ -30,6 +38,10 @@ export default function Home() {
 				setFromPrice={setFromPrice}
 				toPrice={toPrice}
 				setToPrice={setToPrice}
+				filteredFromPrice={filteredFromPrice}
+				setFilteredFromPrice={setFilteredFromPrice}
+				filteredToPrice={filteredToPrice}
+				setFilteredToPrice={setFilteredToPrice}
 			/>
 
 			<Cards

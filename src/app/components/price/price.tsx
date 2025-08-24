@@ -25,6 +25,10 @@ export default function Price ({ fromPrice, setFromPrice, toPrice, setToPrice }:
 		setToPrice(isNaN(numericValueToPrice) ? null : numericValueToPrice);
 	};
 
+	const handleClickButton = () => {
+		
+	}
+
 	return (
 		<div className={s.price}>
 			<span className={s.priceTitle}>Price:</span>
@@ -57,7 +61,7 @@ export default function Price ({ fromPrice, setFromPrice, toPrice, setToPrice }:
 
 			<button
 				className={s.categoryButton}
-				// onClick={handleClickButton}
+				onClick={handleClickButton}
 			>
 				Apply
 			</button>
