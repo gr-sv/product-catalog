@@ -7,9 +7,11 @@ interface PriceProps {
 	setFromPrice: React.Dispatch<React.SetStateAction<number | null>>;
 	toPrice: number | null;
 	setToPrice: React.Dispatch<React.SetStateAction<number | null>>;
+	setFilteredFromPrice: React.Dispatch<React.SetStateAction<number | null>>;
+	setFilteredToPrice: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
-export default function Price ({ fromPrice, setFromPrice, toPrice, setToPrice }: PriceProps) {
+export default function Price ({ fromPrice, setFromPrice, toPrice, setToPrice, setFilteredFromPrice, setFilteredToPrice }: PriceProps) {
 
 	const handleChangeFromPrice = (event: React.ChangeEvent<HTMLInputElement>) => {
 		event.preventDefault();
@@ -26,7 +28,8 @@ export default function Price ({ fromPrice, setFromPrice, toPrice, setToPrice }:
 	};
 
 	const handleClickButton = () => {
-		
+		setFilteredFromPrice(fromPrice);
+		setFilteredToPrice(toPrice);
 	}
 
 	return (
