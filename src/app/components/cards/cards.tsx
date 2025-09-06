@@ -31,6 +31,9 @@ export default function Cards ({ className, selectedCategories, fromPrice, toPri
     }
 	
 	console.log('filteredProducts', filteredProducts);
+
+	//sorting
+	
  	
 	return (
 		<div className={className}>
