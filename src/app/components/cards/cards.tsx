@@ -6,9 +6,10 @@ interface CardsProps {
 	selectedCategories: string[];
 	fromPrice: number | null;
 	toPrice: number | null;
+	naming?: string;
 }
 
-export default function Cards ({ className, selectedCategories, fromPrice, toPrice }: CardsProps) {
+export default function Cards ({ className, selectedCategories, fromPrice, toPrice, naming }: CardsProps) {
 
 	//categories
 	let filteredProducts = selectedCategories.length === 0
@@ -33,7 +34,11 @@ export default function Cards ({ className, selectedCategories, fromPrice, toPri
 	console.log('filteredProducts', filteredProducts);
 
 	//sorting
-	
+	if (naming === 'default') {
+		filteredProducts = filteredProducts;
+	} else {
+		console.log('Ooops! =)');
+	}
  	
 	return (
 		<div className={className}>

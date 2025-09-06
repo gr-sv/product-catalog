@@ -55,7 +55,7 @@ export default function Home() {
 				selectedCategories={selectedCategories}
 				fromPrice={filteredFromPrice}
                 toPrice={filteredToPrice}
-				// naming={naming}
+				naming={naming}
 			/>
 		</main>
   )
