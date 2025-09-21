@@ -2,14 +2,14 @@ import s from './sorting.module.scss';
 
 interface SortingProps {
   className?: string;
-  naming?: string;
-  setNaming: (value: string) => void;
+  optionValue?: string;
+  setOptionValue: (value: string) => void;
 }
 
-export default function Sorting ({ className, setNaming }: SortingProps) {
+export default function Sorting ({ className, setOptionValue }: SortingProps) {
 
 	const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setNaming(event.target.value);
+        setOptionValue(event.target.value);
     };
 
 	return (

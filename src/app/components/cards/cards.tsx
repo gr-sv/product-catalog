@@ -6,10 +6,10 @@ interface CardsProps {
 	selectedCategories: string[];
 	fromPrice: number | null;
 	toPrice: number | null;
-	naming?: string;
+	optionValue?: string;
 }
 
-export default function Cards ({ className, selectedCategories, fromPrice, toPrice, naming }: CardsProps) {
+export default function Cards ({ className, selectedCategories, fromPrice, toPrice, optionValue }: CardsProps) {
 
 	//categories
 	let filteredProducts = selectedCategories.length === 0
@@ -34,15 +34,16 @@ export default function Cards ({ className, selectedCategories, fromPrice, toPri
 	console.log('filteredProducts', filteredProducts);
 
 	//sorting
-	if (naming === 'default') {
-		filteredProducts = filteredProducts;
-	} else {
-		console.log('Ooops! =)');
+	let sortedData = filteredProducts;
+
+	if (optionValue === 'rating') {
+		sortedData = [...filteredProducts].sort((a, b) => (b.rating - a.rating));
+		console.log('sortedData: rating', sortedData);
 	}
  	
 	return (
 		<div className={className}>
-			{filteredProducts.map(product => (
+			{sortedData.map(product => (
 				<div key={product.id} className={s.card}>
 
 					<picture>
@@ -59,7 +60,7 @@ export default function Cards ({ className, selectedCategories, fromPrice, toPri
 						<p className={s.cardCategory}>{`# ${product.category}`}</p>
 					</div>
 				</div>
-			))}
+			))};
 		</div>
 	)
 }

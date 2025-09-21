@@ -25,8 +25,8 @@ export default function Home() {
 	console.log('filteredToPrice', filteredToPrice);
 
 	//sorting
-	const [naming, setNaming] = useState<string>('default');
-	console.log('selector value', naming);
+	const [optionValue, setOptionValue] = useState<string>('default');
+	console.log('selector value', optionValue);
 
 	return (
 		<main className='main'>
@@ -34,8 +34,8 @@ export default function Home() {
 
 			<Sorting
 				className="sorting"
-				naming={naming}
-				setNaming={setNaming}
+				optionValue={optionValue}
+				setOptionValue={setOptionValue}
 			/>
 
 			<Filtering
@@ -55,7 +55,7 @@ export default function Home() {
 				selectedCategories={selectedCategories}
 				fromPrice={filteredFromPrice}
                 toPrice={filteredToPrice}
-				naming={naming}
+				optionValue={optionValue}
 			/>
 		</main>
   )
