@@ -36,9 +36,24 @@ export default function Cards ({ className, selectedCategories, fromPrice, toPri
 	//sorting
 	let sortedData = filteredProducts;
 
+	if (optionValue === 'high to low') {
+		sortedData = [...filteredProducts].sort((a, b) => (b.price - a.price));
+		console.log('sortedData: high to low', sortedData);
+	}
+
+	if (optionValue === 'low to high') {
+		sortedData = [...filteredProducts].sort((a, b) => (a.price - b.price));
+		console.log('sortedData: high to low', sortedData);
+	}
+
 	if (optionValue === 'rating') {
 		sortedData = [...filteredProducts].sort((a, b) => (b.rating - a.rating));
 		console.log('sortedData: rating', sortedData);
+	}
+
+	if (optionValue === 'naming') {
+		sortedData = [...filteredProducts].sort((a, b) => (a.name.localeCompare(b.name)));
+		console.log('sortedData: naming', sortedData);
 	}
  	
 	return (
